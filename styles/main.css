@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body, #page-landing {
+    height: 100vh;
+}
+
+:root {
+    --color-white: #f9fcfb ;
+    --color-white-black: #eeeeee ;
+    --color-whit: # ;
+    --color-whie: # ;
+
+    font-size: 62.5%;
+}
+
+label, 
+input,
+a {
+    font-family: 'Spartan', sans-serif;
+}

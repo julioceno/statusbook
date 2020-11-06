@@ -1,0 +1,118 @@
+#container {
+    height: 100%;
+    background-color: #f3f4f8;   
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#login {
+    background: #ffffff;
+    height: 70vh;
+    width: 70vw;
+    
+    border: 1px solid #c1c1c1;
+    box-shadow: 2rem 2rem 4rem rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#login img {
+    height: 10rem;
+    width: 10rem;
+
+    border: 1px solid #2d6187;
+    border-radius: 50%;
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.1);
+
+    margin: 2rem 0 2rem 0;
+}
+
+#login .input-block + .input-block {
+    margin-top: 2.5rem;
+}
+
+#login .input-block label  {
+    display: block;
+
+    margin-bottom: .5rem;
+
+    font-size: 1.2rem;
+    color: #c1c1c1;
+}
+
+#login .input-block input[type="email"],
+#login .input-block input[type="password"] {
+    height: 5vh;
+    width: 50vw;
+    text-align: center;
+    border: 1px solid #c1c1c1;
+    
+    
+    outline: none;
+}
+
+#login .input-block input[type="password"] {
+    
+    padding-top: 1.2rem;
+}
+
+#login .input-block input[type="email"]:focus,
+#login .input-block input[type="password"]:focus {
+    border: 2px dashed #93b3e4 ;
+}
+
+#login .input-block input[type="submit"] {
+    height: 5vh;
+    width: 50vw;
+    
+    background-color: #316191;
+    color: #ffffff;
+
+    border: none;
+    outline: none;
+}
+
+
+
+#login .input-block input[type="submit"]:hover {
+    background-color: #1f6f8b;
+}
+
+#login .input-block input[type="submit"]:focus {
+    border: 1px solid #ffffff;
+}
+
+#login .register {
+    margin-top: 1rem;
+    font-size: 1.3rem;
+}
+
+@media (min-width:1000px) {
+    #login {
+        height: 90vh;
+        width: 30vw;   
+        
+        
+    }
+
+    #login img {
+        height: 20vh;
+        width: 20vh;
+        margin: 6rem 0 6rem 0;
+    }
+
+    #login .input-block input[type="email"],
+    #login .input-block input[type="password"],
+    #login .input-block input[type="submit"]  {
+    height: 5vh;
+    width: 20vw;
+    
+    
+    }
+
+
+}

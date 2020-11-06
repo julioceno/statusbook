@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/page-landing.css" />
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@500;600&display=swap" rel="stylesheet">    
+  </head>
+
+  <body>
+    <div id="page-landing">
+      <div id="container">
+        <div id="login">
+
+          <img src="/imageLogo.png" alt="">
+          <form action="">
+
+            <div class="input-block">
+
+              <label for="" id="labelEmail">Email</label>
+              <input type="email" placeholder="Email@gmail.com" onfocus="clickEmail()" onblur="clickEmailOver()"/>
+            </div>
+            
+            <div class="input-block">
+              <label for="" id="labelPassword">Senha</label>
+              <input type="password" placeholder="*******" onfocus="clickPassword()" onblur="clickPasswordOver()"/>
+            </div>
+
+            <div class="input-block">
+              <input type="submit" value="Entrar" />
+            </div>
+          </form>
+          <div class="register"> <a href="">Crie uma conta</a></div>
+
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+
+</html>
