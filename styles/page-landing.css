@@ -28,7 +28,7 @@
     border-radius: 50%;
     box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.1);
 
-    margin: 2rem 0 2rem 0;
+    margin: 5vh 0 5vh 0;
 }
 
 #login .input-block + .input-block {
