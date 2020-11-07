@@ -39,7 +39,7 @@
               <input type="password" id="inputPassword" placeholder="*******" onfocus="clickPassword()" onblur="clickPasswordOver()"/>
            
               <div class="showPassword">
-                <input type="checkbox" name="" id="showPassword" onclick="showHiddenPassword()"> <Small>Mostrar Senha</Small>
+                <input type="checkbox" name="" onclick="showHiddenPassword()"> <Small>Mostrar Senha</Small> <!-- Tinha id no chekbox-->
               </div>
               
             </div>
@@ -48,8 +48,8 @@
               <label for="" id="labelConfirmPassword"> confirmar Senha </label>
               <input type="password"  id="inputConfirmPassword" placeholder="*******" onfocus="clickConfirmPassword()" onblur="clickConfirmPasswordOver()"/>
               
-              <div class="showPassword">
-                <input type="checkbox" name="" id="showPassword" onclick="showHiddenConfirmPassword()"> <Small>Mostrar Confirmar Senha</Small>
+              <div class="showPassword showConfirmPassword">
+                <input type="checkbox" name=""  onclick="showHiddenConfirmPassword()"> <Small>Mostrar Confirmar Senha</Small> <!-- Tinha id no chekbox-->
               </div>
               
             </div>
@@ -58,7 +58,7 @@
               <input type="submit" value="Criar conta" />
             </div>
           </form>
-          <div class="come-back"> <a href="index.html">Voltar</a></div>
+          <div class="come-back"> <a href="index.html">Voltar ao Login</a></div>
 
         </div>
       </div>

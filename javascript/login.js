@@ -21,7 +21,15 @@ const showPassword = document.getElementById("showPassword")
 
 function showHiddenPassword() {
     const inputPassword = document.getElementById("inputPassword")
+    const checkbox = document.querySelector(".showPassword small")
 
-    if (inputPassword.type == "password") inputPassword.type = "text"
-    else inputPassword.type = "password"
+    if (inputPassword.type == "password"){
+         inputPassword.type = "text"
+         checkbox.style.color = '#000000'
+    }
+    else {
+        inputPassword.type = "password"
+        checkbox.style.color = 'var(--color-grey)'
+    }
+
 }
