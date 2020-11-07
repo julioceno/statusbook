@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>statusbook | criando conta</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/page-register.css" />
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@500;600&display=swap" rel="stylesheet">    
+  </head>
+
+  <body>
+    <div id="page-register">
+      <div id="container">
+        <div id="register">
+
+          <img src="images/imageUser.png" alt="">
+          <form action="" onsubmit="validate(event)">
+
+            <div class="input-block">
+              <label for="" id="labelName">Nome completo</label>
+              <input type="text" placeholder="Júlio Nepomuceno" onfocus="clickName()" onblur="clickNameOver()">
+            </div>
+
+            <div class="input-block">
+              <label for="" id="labelNickName">Apelido</label>
+              <input type="text" placeholder="Julin" onfocus="clickNickName()" onblur="clickNickNameOver()">
+            </div>
+
+            <div class="input-block">
+              <label for="" id="labelEmail">Email</label>
+              <input type="email" placeholder="Email@gmail.com" onfocus="clickEmail()" onblur="clickEmailOver()"/>
+            </div>
+            
+            <div class="input-block">
+              <label for="" id="labelPassword">Senha</label>
+              <input type="password" id="inputPassword" placeholder="*******" onfocus="clickPassword()" onblur="clickPasswordOver()"/>
+            </div>
+
+            <div class="input-block">
+              <label for="" id="labelConfirmPassword"> confirmar Senha </label>
+              <input type="password"  id="inputConfirmPassword" placeholder="*******" onfocus="clickConfirmPassword()" onblur="clickConfirmPasswordOver()"/>
+            </div>
+
+            <div class="input-block">
+              <input type="submit" value="Criar conta" />
+            </div>
+          </form>
+          <div class="come-back"> <a href="index.html">Voltar</a></div>
+
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="javascript/register.js"></script>
+
+</html>

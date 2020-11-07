@@ -7,9 +7,9 @@
     align-items: center;
 }
 
-#login {
+#register {
     background: var(--color-white);
-    height: 70vh;
+    height: 98vh;
     width: 70vw;
     
     border: 1px solid var(--color-grey);
@@ -20,18 +20,18 @@
     align-items: center;
 }
 
-#login img {
-    height: 10rem;
-    width: 10rem;
+#register img {
+    height: 8rem;
+    width: 8rem;
 
     border: 1px solid var(--color-blue);
     border-radius: 50%;
     box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.1);
 
-    margin: 5vh 0 5vh 0;
+    margin: 2vh 0 5vh 0;
 }
 
-#login .input-block label  {
+#register .input-block label  {
     display: block;
 
     margin-bottom: .5rem;
@@ -41,33 +41,33 @@
 }
 
 
-#login .input-block + .input-block {
+#register .input-block + .input-block {
     margin-top: 2.5rem;
 }
 
 
-#login .input-block input[type="email"],
-#login .input-block input[type="password"] {
+#register .input-block input[type="email"],
+#register .input-block input[type="password"], 
+#register .input-block input[type="text"] {
     height: 5vh;
     width: 50vw;
     text-align: center;
     border: 1px solid var(--color-grey);
     
-    
     outline: none;
 }
 
-#login .input-block input[type="password"] {
-    
-    padding-top: 1.2rem;
+#register .input-block input[type="password"] {
+    padding-top: 1.2rem; /* Centralizando os asteristicos no meio do input*/
 }
 
-#login .input-block input[type="email"]:focus,
-#login .input-block input[type="password"]:focus {
+#register .input-block input[type="email"]:focus,
+#register .input-block input[type="password"]:focus,
+#register .input-block input[type="text"]:focus {
     border: 2px dashed var(--color-blue-weak) ;
 }
 
-#login .input-block input[type="submit"] {
+#register .input-block input[type="submit"] {
     height: 5vh;
     width: 50vw;
     
@@ -78,43 +78,36 @@
     outline: none;
 }
 
-
-
-#login .input-block input[type="submit"]:hover {
+#register .input-block input[type="submit"]:hover {
     background-color:   var(--color-blue);
 }
 
-#login .input-block input[type="submit"]:focus {
+#register .input-block input[type="submit"]:focus {
     border: 1px solid  var(--color-grey);
 }
 
-#login .register {
-    margin-top: 1rem;
-    font-size: 1.3rem;
+#register .come-back {
+    margin-top: 1.2rem;
+    font-size: 1.2rem;
 }
 
 @media (min-width:1000px) {
-    #login {
-        height: 90vh;
+    #register {
+        height: 95vh;
         width: 30vw;   
-        
-        
     }
 
-    #login img {
-        height: 20vh;
-        width: 20vh;
-        margin: 6rem 0 6rem 0;
+    #register img {
+        height: 16vh;
+        width: 16vh;
+        margin: 2rem 0 2rem 0;
     }
 
-    #login .input-block input[type="email"],
-    #login .input-block input[type="password"],
-    #login .input-block input[type="submit"]  {
+    #register .input-block input[type="email"],
+    #register .input-block input[type="password"],
+    #register .input-block input[type="text"],
+    #register .input-block input[type="submit"]  {
     height: 5vh;
     width: 20vw;
-    
-    
     }
-
-
 }
