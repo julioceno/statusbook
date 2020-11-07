@@ -47,7 +47,8 @@
 
 
 #login .input-block input[type="email"],
-#login .input-block input[type="password"] {
+#login .input-block input[type="password"],
+#login .input-block input[type="text"] {
     height: 5vh;
     width: 50vw;
     text-align: center;
@@ -57,14 +58,25 @@
     outline: none;
 }
 
-#login .input-block input[type="password"] {
-    
+#login .input-block #inputPassword { /* Centralizando a senha no centro do input*/
     padding-top: 1.2rem;
 }
 
 #login .input-block input[type="email"]:focus,
-#login .input-block input[type="password"]:focus {
+#login .input-block input[type="password"]:focus,
+#login .input-block input[type="text"]:focus{
     border: 2px dashed var(--color-blue-weak) ;
+}
+
+#login .input-block .showPassword {
+    margin-top: 1rem;
+}
+
+#login .input-block .showPassword small {
+    font-size: .9rem;
+    margin-left: 0.3rem;
+    color: var(--color-grey)
+
 }
 
 #login .input-block input[type="submit"] {
@@ -109,6 +121,7 @@
 
     #login .input-block input[type="email"],
     #login .input-block input[type="password"],
+    #login .input-block input[type="text"],
     #login .input-block input[type="submit"]  {
     height: 5vh;
     width: 20vw;

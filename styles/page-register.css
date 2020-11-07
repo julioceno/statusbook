@@ -57,14 +57,29 @@
     outline: none;
 }
 
-#register .input-block input[type="password"] {
-    padding-top: 1.2rem; /* Centralizando os asteristicos no meio do input*/
+#register .input-block #inputPassword, /* Centralizando a senha no centro do input*/
+#register .input-block #inputConfirmPassword  {
+    padding-top: 1.2rem; 
 }
 
 #register .input-block input[type="email"]:focus,
 #register .input-block input[type="password"]:focus,
 #register .input-block input[type="text"]:focus {
     border: 2px dashed var(--color-blue-weak) ;
+}
+
+#register .input-block .showPassword,
+#register .input-block .showConfirmPassword  {
+    margin-top: 1rem;
+
+}
+
+
+#register .input-block .showPassword small {
+    font-size: .9rem;
+    margin-left: 0.3rem;
+    color: var(--color-grey);
+
 }
 
 #register .input-block input[type="submit"] {
@@ -93,13 +108,13 @@
 
 @media (min-width:1000px) {
     #register {
-        height: 95vh;
+        height: 98vh;
         width: 30vw;   
     }
 
     #register img {
-        height: 16vh;
-        width: 16vh;
+        height: 15vh;
+        width: 15vh;
         margin: 2rem 0 2rem 0;
     }
 

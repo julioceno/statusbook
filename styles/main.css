@@ -23,6 +23,7 @@ html, body, #page-landing, #page-register  {
 
 label, 
 input,
-a {
+a,
+small {
     font-family: 'Spartan', sans-serif;
 }

@@ -53,6 +53,7 @@ function clickConfirmPasswordOver() {
 
 const inputConfirmPassword = document.getElementById("inputConfirmPassword")
 const inputPassword = document.getElementById("inputPassword")
+
 function validate(event) {
 
     if (inputPassword.value !== inputConfirmPassword.value) {
@@ -62,4 +63,18 @@ function validate(event) {
         inputConfirmPassword.style.border ="2px dashed var(--color-red)"
     
     }
+}
+
+function showHiddenPassword() {
+    const inputPassword = document.getElementById("inputPassword")
+
+    if (inputPassword.type == "password") inputPassword.type = "text"
+    else inputPassword.type = "password"
+}
+
+function showHiddenConfirmPassword() {
+    const inputPassword = document.getElementById("inputConfirmPassword")
+
+    if (inputPassword.type == "password") inputPassword.type = "text"
+    else inputPassword.type = "password"
 }

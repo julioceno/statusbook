@@ -26,7 +26,12 @@
             
             <div class="input-block">
               <label for="" id="labelPassword">Senha</label>
-              <input type="password" placeholder="*******" onfocus="clickPassword()" onblur="clickPasswordOver()"/>
+              <input type="password" id="inputPassword" placeholder="*******" onfocus="clickPassword()" onblur="clickPasswordOver()"/>
+          
+              <div class="showPassword">
+                <input type="checkbox" name="" id="showPassword" onclick="showHiddenPassword()"> <Small>Mostrar Senha</Small>
+              </div>
+              
             </div>
 
             <div class="input-block">

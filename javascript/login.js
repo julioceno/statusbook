@@ -17,3 +17,11 @@ function clickPasswordOver() {
     labelPassword.style.color= "#c1c1c1"
 }
 
+const showPassword = document.getElementById("showPassword")
+
+function showHiddenPassword() {
+    const inputPassword = document.getElementById("inputPassword")
+
+    if (inputPassword.type == "password") inputPassword.type = "text"
+    else inputPassword.type = "password"
+}
