@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>statusbook | entrando</title>
-    <link rel="stylesheet" href="styles/main.css" />
-    <link rel="stylesheet" href="styles/page-landing.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/page-landing.css" />
 
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@500;600&display=swap" rel="stylesheet">    
@@ -17,16 +17,16 @@
         <div id="login">
 
           <img src="images/imageUser.png" alt="">
-          <form action="">
+          <form action="/" method="POST"> 
 
             <div class="input-block">
               <label for="" id="labelEmail">Email</label>
-              <input type="email" placeholder="Email@gmail.com" onfocus="clickEmail()" onblur="clickEmailOver()"/>
+              <input type="email" name="email" placeholder="Email@gmail.com" onfocus="clickEmail()" onblur="clickEmailOver()" required>
             </div>
             
             <div class="input-block">
               <label for="" id="labelPassword">Senha</label>
-              <input type="password" id="inputPassword" placeholder="*******" onfocus="clickPassword()" onblur="clickPasswordOver()"/>
+              <input type="password" name="password" id="inputPassword" placeholder="*******" onfocus="clickPassword()" onblur="clickPasswordOver()" required>
           
               <div class="showPassword">
                 <input type="checkbox" name="" id="showPassword" onclick="showHiddenPassword()"> <Small>Mostrar Senha</Small>
@@ -40,12 +40,12 @@
 
           </form>
 
-          <div class="register"> <a href="register.html">Crie uma conta</a></div>
+          <div class="register"> <a href="/register">Crie uma conta</a></div>
 
         </div>
       </div>
     </div>
   </body>
-  <script src="javascript/login.js"></script>
+  <script src="/javascript/login.js"></script>
 
 </html>

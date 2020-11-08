@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>statusbook | criando conta</title>
-    <link rel="stylesheet" href="styles/main.css" />
-    <link rel="stylesheet" href="styles/page-register.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/page-register.css" />
 
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@500;600&display=swap" rel="stylesheet">    
@@ -16,37 +16,37 @@
       <div id="container">
         <div id="register">
 
-          <img src="images/imageUser.png" alt="">
-          <form action="" onsubmit="validate(event)">
+          <img src="/images/imageUser.png" alt="foto do login">
+          <form action="save-user" method="POST"  onsubmit="validate(event)">
 
             <div class="input-block">
               <label for="" id="labelName">Nome completo</label>
-              <input type="text" placeholder="Júlio Nepomuceno" onfocus="clickName()" onblur="clickNameOver()">
+              <input type="text" name="name" placeholder="Júlio Nepomuceno" onfocus="clickName()" onblur="clickNameOver()" required>
             </div>
 
             <div class="input-block">
               <label for="" id="labelNickName">Apelido</label>
-              <input type="text" placeholder="Julin" onfocus="clickNickName()" onblur="clickNickNameOver()">
+              <input type="text" name="nickName" placeholder="Julin" onfocus="clickNickName()" onblur="clickNickNameOver()" required>
             </div>
 
             <div class="input-block">
               <label for="" id="labelEmail">Email</label>
-              <input type="email" placeholder="Email@gmail.com" onfocus="clickEmail()" onblur="clickEmailOver()"/>
+              <input type="email" name="email" placeholder="Email@gmail.com" onfocus="clickEmail()" onblur="clickEmailOver()" required>
             </div>
             
             <div class="input-block">
               <label for="" id="labelPassword">Senha</label>
-              <input type="password" id="inputPassword" placeholder="*******" onfocus="clickPassword()" onblur="clickPasswordOver()"/>
+              <input type="password" name="password" id="inputPassword" placeholder="*******" onfocus="clickPassword()" onblur="clickPasswordOver()" required>
            
               <div class="showPassword">
-                <input type="checkbox" name="" onclick="showHiddenPassword()"> <Small>Mostrar Senha</Small> <!-- Tinha id no chekbox-->
+                <input type="checkbox" onclick="showHiddenPassword()"> <Small>Mostrar Senha</Small> <!-- Tinha id no chekbox-->
               </div>
               
             </div>
 
             <div class="input-block">
               <label for="" id="labelConfirmPassword"> confirmar Senha </label>
-              <input type="password"  id="inputConfirmPassword" placeholder="*******" onfocus="clickConfirmPassword()" onblur="clickConfirmPasswordOver()"/>
+              <input type="password"  name="confirmPassword" id="inputConfirmPassword" placeholder="*******" onfocus="clickConfirmPassword()" onblur="clickConfirmPasswordOver()" required>
               
               <div class="showPassword showConfirmPassword">
                 <input type="checkbox" name=""  onclick="showHiddenConfirmPassword()"> <Small>Mostrar Confirmar Senha</Small> <!-- Tinha id no chekbox-->
@@ -58,12 +58,12 @@
               <input type="submit" value="Criar conta" />
             </div>
           </form>
-          <div class="come-back"> <a href="index.html">Voltar ao Login</a></div>
+          <div class="come-back"> <a href="/">Voltar ao Login</a></div>
 
         </div>
       </div>
     </div>
   </body>
-  <script src="javascript/register.js"></script>
+  <script src="/javascript/register.js"></script>
 
 </html>
