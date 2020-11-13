@@ -74,15 +74,15 @@
 
           <div class="post">
             
-            <form action="">
+            <form action="/post-publish" method="POST"  onsubmit="validate(event)">
 
-              <textarea name="" id="post-text" placeholder="O que você está pensando?"></textarea>
+              <textarea name="text" id="post-text" placeholder="O que você está pensando?"></textarea>
             
-              <input type="text" name="" id="post-image"  placeholder="Link da Imagem  (opcional)">
+              <input type="text" name="image" id="post-image"  placeholder="Link da Imagem  (opcional)">
   
               
   
-  
+              <p class="error-publish" id="error-publish">Prencha algum dos campos</p>
               <div class="buttons">
                 <input type="submit" class="post-button" value="Postar">
                 <input type="button" class="cancel-button" value="Cancelar" onclick="toClearField()">

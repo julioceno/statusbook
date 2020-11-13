@@ -12,4 +12,4 @@ async function execute(db) {
     `)
 }
 
-module.exports = Database.open(__dirname + "/database.sqlite.db").then(execute) 
+module.exports = Database.open(__dirname + "/users-database.sqlite.db").then(execute) 

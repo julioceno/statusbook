@@ -14,7 +14,8 @@
     background-color: var(--color-white);
 
 
-    height: 25rem;
+    min-height: 26rem;
+    height: auto;
     width: 80vw;
 
     margin: 2rem auto 0;
@@ -72,10 +73,21 @@
 
 }
 
+.feed .post .error-publish {
+    color: var(--color-red);
+    font-size: 1rem;
+
+    padding-bottom: 1rem;
+
+    display: none;
+}
+
+
 .feed .post .buttons {
     text-align: end;
 
-    padding: 2rem 3rem 0 0 ;
+    padding: 2rem 3rem 2rem 0 ;
+
 }
 
 .feed .post input[type="button"],
@@ -192,7 +204,7 @@
 .pub .like,
 .pub-image .like  {
     width: 100%;
-    margin: 2rem 0 4rem 2rem;
+    margin: 2rem 0 1rem 2rem;
 }
 
 .pub .like input[type="submit"],
@@ -211,7 +223,6 @@
 }
 
 /* pub image*/ 
-
 
 .pub-image .image {
     margin-left: 2rem;
@@ -242,6 +253,15 @@
     .feed .post .cancel-button {
         width: 10vw;
     }
+
+
+    /* publications */
+
+    .pub,
+    .pub-image {
+
+    width: 60vw;
+    }
 }
 
 
@@ -266,5 +286,14 @@
     .feed .post .cancel-button {
     width: 10vw;
     }
+
+     /* publications */
+
+     .pub,
+     .pub-image {
+ 
+     width: 60rem;
+     }
+
 }
 

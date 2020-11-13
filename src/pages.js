@@ -1,7 +1,10 @@
-const Database = require('./database/db')
-const saveUser = require('./database/saveUser')
+const usersDatabase = require('./database/log/usersdb')
+const publicationsDatabase = require('./database/post/publicationsdb')
+const saveUser = require('./database/log/saveUser')
 
 module.exports = {
+    // Fase de rotas de login e register
+    
     index(req, resp) {
        return resp.render( "index.html")
     },
@@ -15,12 +18,12 @@ module.exports = {
 
         try {
 
-            const db = await Database
+            const db = await usersDatabase
             const checkingEmail = await db.all(`SELECT * FROM users WHERE  email = "${fieldLogin.email}" `)
             const checkingPassword = await db.all(`SELECT * FROM users WHERE  password = "${fieldLogin.password}" `)
     
             if (checkingEmail[0] &&  checkingPassword[0]) {
-                resp.render('page-main.html')
+                resp.redirect('/feed')
             } 
 
             if (!checkingEmail[0] || !checkingPassword[0]) {
@@ -41,7 +44,7 @@ module.exports = {
         const fieldRegister = req.body
 
         try {
-            const db = await Database
+            const db = await usersDatabase
 
 
             const checkingPassword = await db.all(`SELECT * FROM users  WHERE password = "${fieldRegister.password}"`)
@@ -63,6 +66,30 @@ module.exports = {
         } catch(e) {
             console.log(e)
             resp.send('erro no banco de dados')
+        }
+    },
+
+    // feed
+
+    pageFeed(req, resp) {
+        return resp.render('page-feed.html')
+     }, 
+
+     publish(req, resp) {
+        const fieldPublish = req.body
+        console.log(fieldPublish)
+        try {
+
+
+
+            resp.redirect('/feed')
+
+
+
+        } catch(e) {
+
+            resp.send('Erro no banco de dados')
+            console.log(e)
         }
     }
 }

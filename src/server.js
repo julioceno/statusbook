@@ -22,8 +22,11 @@ app
      // Fases de rotas de login e register
     .get('/', pages.index)
     .get('/register', pages.register)
-    .post('/login-user', pages.loginUser)
+    .post('/login', pages.loginUser)
     .post('/save-user', pages.saveDataUser)
-
     
+    // feed
+    .get('/feed', pages.pageFeed)
+    .post('/post-publish', pages.publish)
+
     app.listen(8080)
