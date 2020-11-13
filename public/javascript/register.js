@@ -1,3 +1,13 @@
+// Verificando se a senha já foi usada
+
+window.onhashchange = function(e) {
+    const url = e.split('#')[1]
+
+    console.log(url)
+
+}
+
+
 const labelName = document.getElementById("labelName")
 const labelNickName = document.getElementById("labelNickName")
 const labelEmail = document.getElementById("labelEmail")
@@ -62,6 +72,11 @@ function validate(event) {
         inputConfirmPassword.style.border ="2px dashed var(--color-red)"
     
     }
+
+    if(window.location.hash) {
+        alert('Existe')
+      } 
+    
 }
 
 function showHiddenPassword() {
@@ -90,6 +105,14 @@ function showHiddenConfirmPassword() {
         inputPassword.type = "password"
         checkbox.style.color = 'var(--color-grey)'
     }
-
-
 }
+
+
+(function() {
+    const url = (window.location.href).split('?')[1]
+    if (url === "message=senhaemuso") { 
+        document.querySelector('#register .register-error small').style.display = 'block'
+    }
+})()
+
+

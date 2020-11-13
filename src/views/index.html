@@ -16,8 +16,8 @@
       <div id="container">
         <div id="login">
 
-          <img src="images/imageUser.png" alt="">
-          <form action="/" method="POST"> 
+          <img src="images/image-user.png" alt="">
+          <form action="login-user" method="POST"> 
 
             <div class="input-block">
               <label for="" id="labelEmail">Email</label>
@@ -31,7 +31,10 @@
               <div class="showPassword">
                 <input type="checkbox" name="" id="showPassword" onclick="showHiddenPassword()"> <Small>Mostrar Senha</Small>
               </div>
-              
+            </div>
+
+            <div class="login-error">
+              <small>Email ou senha incorretos</small>
             </div>
 
             <div class="input-block">
@@ -46,6 +49,7 @@
       </div>
     </div>
   </body>
+
   <script src="/javascript/login.js"></script>
 
 </html>

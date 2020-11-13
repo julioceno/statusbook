@@ -1,0 +1,58 @@
+.side-bar {
+    position: fixed;
+    right: 0;
+    top: 6rem;
+
+    height: 100%;
+    width: 25rem;
+
+    background-color: var(--color-white);
+    border-left: 3px solid var(--color-blue-black);
+    border-bottom: 3px solid var(--color-blue-black);
+
+
+    display: none;
+}
+
+.initial-page, .profile, .creator, .icons, .config {
+    margin-left: .8rem;
+    margin-top: 2rem;
+
+    display: flex;
+    align-items: center;
+
+}
+
+img {
+    margin-right: .5rem;
+}
+
+
+a {
+    text-decoration: none;
+    font-size: 1.5rem;
+
+    color: var(--color-blue);
+}
+
+
+
+@keyframes appear-right{
+
+    from {
+        opacity: 0;
+        transform: translateX(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-5);
+
+    }
+}
+
+.appear-right {
+    animation-name: appear-right;
+    animation-duration: 1s;
+    animation-fill-mode: backwards;
+}

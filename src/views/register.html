@@ -16,7 +16,8 @@
       <div id="container">
         <div id="register">
 
-          <img src="/images/imageUser.png" alt="foto do login">
+          <img src="/images/image-user.png" alt="foto do login">
+
           <form action="save-user" method="POST"  onsubmit="validate(event)">
 
             <div class="input-block">
@@ -51,13 +52,17 @@
               <div class="showPassword showConfirmPassword">
                 <input type="checkbox" name=""  onclick="showHiddenConfirmPassword()"> <Small>Mostrar Confirmar Senha</Small> <!-- Tinha id no chekbox-->
               </div>
-              
+            </div>
+
+            <div class="register-error">
+              <small>Senha já está em uso</small>
             </div>
 
             <div class="input-block">
               <input type="submit" value="Criar conta" />
             </div>
           </form>
+
           <div class="come-back"> <a href="/">Voltar ao Login</a></div>
 
         </div>

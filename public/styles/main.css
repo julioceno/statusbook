@@ -4,18 +4,20 @@
     box-sizing: border-box;
 }
 
-html, body, #page-landing, #page-register  {
+html, body, #page-landing, #page-register, #page-feed  {
     height: 100vh;
 }
 
 :root {
+    --color-black: #1a1a2e;
     --color-white: #ffffff ;
     --color-white-weak: #f3f4f8 ;
     --color-grey: #c1c1c1 ;
+    --color-grey-weak: #e8e8e8;
     --color-blue: #1f6f8b ;
     --color-blue-weak: #93b3e4 ;
-    --color-blue-black: #2d6187 ;
-    --color-blue-black-2: #316191 ;
+    --color-blue-black: #316191 ;
+    --color-blue-black-2: #2d6187 ;
     --color-red: #ea2c62 ;
 
     font-size: 62.5%;
@@ -23,7 +25,10 @@ html, body, #page-landing, #page-register  {
 
 label, 
 input,
-a,
-small {
+div,
+textarea,
+small,
+a, 
+p{
     font-family: 'Spartan', sans-serif;
 }

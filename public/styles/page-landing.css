@@ -83,7 +83,7 @@
     height: 5vh;
     width: 50vw;
     
-    background-color: var(--color-blue-black-2);
+    background-color: var(--color-blue-black);
     color: var(--color-white);
 
     border: none;
@@ -100,17 +100,28 @@
     border: 1px solid  var(--color-grey);
 }
 
+#login .login-error{
+    margin: .8rem 0 .8rem 0;
+}
+
+#login .login-error small {
+    font-size: 1rem;
+    color: var(--color-red);
+
+    display: none;
+}
+
+
 #login .register {
     margin-top: 1rem;
     font-size: 1.3rem;
 }
 
+
 @media (min-width:1000px) {
     #login {
         height: 90vh;
         width: 30vw;   
-        
-        
     }
 
     #login img {
@@ -125,9 +136,6 @@
     #login .input-block input[type="submit"]  {
     height: 5vh;
     width: 20vw;
-    
-    
     }
-
-
 }
+

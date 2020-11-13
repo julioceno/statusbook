@@ -33,3 +33,12 @@ function showHiddenPassword() {
     }
 
 }
+
+
+(function() {
+    const url = (window.location.href).split('?')[1]
+    if (url === "message=emailousenhaincorreto") { 
+        document.querySelector('#login .login-error small').style.display = 'block'
+    }
+})()
+

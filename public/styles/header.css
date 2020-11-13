@@ -1,0 +1,222 @@
+.header {
+    position: fixed;
+    top: 0;
+
+    height: 6rem;
+    width: 100%;
+    background-color: var(--color-white);
+    border-bottom: 3px solid var(--color-blue);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo {
+    font-size: 180%;
+    letter-spacing: 0.1rem;
+    font-family: 'Goldman', cursive;
+    color: var(--color-blue-weak);
+
+    margin: 0 0 0 .3rem;
+}
+
+.header .search {
+    height: 3rem;
+    
+    display: flex;
+    margin: 0 0 0 0.3rem;
+}
+
+ .header .search input[type="text"],
+ .header .search input[type="button"]  {
+    border-radius: 2rem 0 0 2rem;
+    border: 1px solid var(--color-blue-weak);
+    width: 25vw;
+
+    text-align: center;
+    font-size: 1rem;
+
+    outline: none;
+}
+
+ .header .search input[type="button"] {
+    background: none;
+    border-radius: 0 2rem 2rem 0;
+    width: 6vw;
+
+    background-image: url(/images/search.png);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
+}
+
+ .header .search input[type="text"]:focus,
+ .header .search input[type="button"]:focus {
+    border: 1px solid var( --color-blue-black);
+}
+
+.hamburger-menu {
+    height: 3rem;
+    width: 50px;
+}
+
+.hamburguer::after {
+    content: "";
+    position: absolute;
+
+    top: 1.5rem;
+    right: .7rem;
+        
+    width: 3rem;
+    height: 10px;
+
+    border-radius: 20px;
+
+    transition: 1s ease;
+
+    background-color: var(--color-blue-weak);
+}
+
+.hamburguer::before {
+    content: "";
+    position: absolute;
+
+    top: 3rem;
+    right: .7rem;
+    
+    width: 2rem;
+    height: 10px;
+
+    border-radius: 20px;
+
+    transition: 1s ease;
+
+    background-color: var(--color-blue-weak);
+}
+
+#hamburguer:checked ~ label .hamburguer::after {
+    transform: rotate(225deg);
+
+    top: 2.5rem;
+    height: .8rem;
+    width: 3rem;
+}
+
+
+#hamburguer:checked ~ label .hamburguer::before {
+    transform: rotate(-405deg);
+
+    top: 2.5rem;
+
+    height: .8rem;
+    width: 3rem;
+}
+
+@media(min-width: 750px) {
+
+    .header .logo {
+        font-size: 400%;
+        letter-spacing: 0.2rem;
+
+        margin: 0 0 0 3rem;
+    }
+
+    .header .search input[type="text"] {
+        width: 30rem;
+        font-size: 1.5rem;
+
+    } 
+
+    .header .search input[type="button"] {
+        background-size: 3.5rem;
+
+    }
+ 
+    .hamburger-menu {
+        width: 10rem;
+    }
+
+    .hamburguer::after {
+        right: 2rem;
+    
+        width: 4rem;
+        height: 1.2rem;
+    }
+
+    .hamburguer::before {
+        right: 2rem;
+        top: 3.2rem;
+
+        width: 2rem;
+        height: 1.2rem;
+    }
+
+    #hamburguer:checked ~ label .hamburguer::after {
+        width: 4rem;
+        height: 1rem;
+    }
+
+
+    #hamburguer:checked ~ label .hamburguer::before {
+        width: 4rem;
+        height: 1rem;
+    }
+    
+}
+
+
+
+@media(min-width: 1100px) {
+    
+    .header .search {
+        margin-left: 5rem;
+    }
+    
+    .header .search input[type="text"] {
+        width: 40rem;
+    } 
+
+    .header .search input[type="button"] {
+        background-size: 3.5rem;
+
+    }
+    
+    .header .logo {
+        margin-right: 5rem;
+
+        font-size: 6rem;
+        letter-spacing: 0.3rem;
+    }
+
+    .hamburger-menu {
+        width: 20rem;
+    }
+
+
+    .hamburguer::after {
+        right: 2rem;
+    
+        width: 5rem;
+        height: 1.2rem;
+    }
+
+    .hamburguer::before {
+        right: 2rem;
+        top: 3.2rem;
+
+        width: 3rem;
+        height: 1.2rem;
+    }
+
+    #hamburguer:checked ~ label .hamburguer::after {
+        width: 5rem;
+        height: 1rem;
+    }
+
+
+    #hamburguer:checked ~ label .hamburguer::before {
+        width: 5rem;
+        height: 1rem;
+    }
+}

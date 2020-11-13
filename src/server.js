@@ -21,6 +21,7 @@ app
 
     .get('/', pages.index)
     .get('/register', pages.register)
-    .post('/save-user', pages.saveUser)
+    .post('/login-user', pages.loginUser)
+    .post('/save-user', pages.saveDataUser)
 
     app.listen(8080)
