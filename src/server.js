@@ -19,9 +19,11 @@ app
 
     .use(express.static('public'))
 
+     // Fases de rotas de login e register
     .get('/', pages.index)
     .get('/register', pages.register)
     .post('/login-user', pages.loginUser)
     .post('/save-user', pages.saveDataUser)
 
+    
     app.listen(8080)

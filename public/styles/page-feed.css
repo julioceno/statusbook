@@ -120,20 +120,24 @@
 /*publications */
 
 
-.pub1 {
+.pub,
+.pub-image {
     background-color: var(--color-white);
 
     min-height: 13rem;
     height: auto; 
-    width: 80vw;
+    width: 70vw;
 
     margin: 5rem auto 0;
     padding: .2rem 0 0rem 0;
     border-radius: 1rem;
 
+    border: .1rem solid var(--color-grey);
+
 }
 
-.pub1 .post-data {
+.pub .post-data,
+.pub-image .post-data {
     margin: 2rem 0 0 0;
     
     display: flex;
@@ -142,7 +146,8 @@
     
 }
 
-.pub1 img {
+.pub .post-data img,
+.pub-image .post-data img {
     height: 5rem;
 
     border: 1px solid var(--color-blue-black);
@@ -151,37 +156,70 @@
 
 }
 
-.nickName, .date {
+.pub .nickName .date,
+.pub-image .nickName .date  {
     color: var(--color-black);
 }
 
-.nickName {
+.pub .nickName,
+.pub-image .nickName {
     margin-bottom: .5rem;
     font-size: 2rem;
 
     color: var(--color-blue-weak);
 }
 
-.date {
+.pub .date,
+.pub-image .date  {
     font-size: .8rem;
     color: var(--color-grey);
 }
 
-.status {
+
+.pub .status,
+.pub-image .status {
     word-wrap: break-word;
     padding: .5rem 0 1rem 0;
-    
-
 } 
 
-.status p{
+.pub .status p,
+.pub-image .status p{
     color: var(--color-black);
     display: block;
-   
 }
 
 
+.pub .like,
+.pub-image .like  {
+    width: 100%;
+    margin: 2rem 0 4rem 2rem;
+}
 
+.pub .like input[type="submit"],
+.pub-image .like input[type="submit"] {
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--color-white);
+
+    text-decoration: none;
+    border: none;
+
+    background-image: url(/images/like.png);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+/* pub image*/ 
+
+
+.pub-image .image {
+    margin-left: 2rem;
+}
+
+.pub-image .image img{
+    width: 50%;
+}
 
 
 @media(min-width: 750px) {
