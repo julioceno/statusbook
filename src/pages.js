@@ -1,6 +1,11 @@
 const usersDatabase = require('./database/log/usersdb')
-const publicationsDatabase = require('./database/post/publicationsdb')
 const saveUser = require('./database/log/saveUser')
+const publicationsDatabase = require('./database/post/publicationsdb')
+const savePublications = require('./database/post/savePublications')
+
+// dados do usuário
+let nickName;
+let id;
 
 module.exports = {
     // Fase de rotas de login e register
@@ -15,13 +20,12 @@ module.exports = {
 
     async loginUser(req, resp) {
         const fieldLogin = req.body
-
         try {
 
             const db = await usersDatabase
-            const checkingEmail = await db.all(`SELECT * FROM users WHERE  email = "${fieldLogin.email}" `)
-            const checkingPassword = await db.all(`SELECT * FROM users WHERE  password = "${fieldLogin.password}" `)
-    
+            const checkingEmail = await db.all(`SELECT email FROM users WHERE  password = "${fieldLogin.password}" `)
+            const checkingPassword = await db.all(`SELECT password FROM users WHERE  password = "${fieldLogin.password}" `)
+
             if (checkingEmail[0] &&  checkingPassword[0]) {
                 resp.redirect('/feed')
             } 
@@ -29,6 +33,9 @@ module.exports = {
             if (!checkingEmail[0] || !checkingPassword[0]) {
                 resp.redirect('/' + '?message=emailousenhaincorreto')
             }
+
+            nickName= await db.all(`SELECT nickName FROM users WHERE  password = "${fieldLogin.password}" `)
+            id = await db.all(`SELECT id FROM users WHERE  password = "${fieldLogin.password}" `)
 
 
         } catch(e) {
@@ -46,8 +53,7 @@ module.exports = {
         try {
             const db = await usersDatabase
 
-
-            const checkingPassword = await db.all(`SELECT * FROM users  WHERE password = "${fieldRegister.password}"`)
+            const checkingPassword = await db.all(`SELECT password FROM users  WHERE password = "${fieldRegister.password}"`)
             if (checkingPassword[0]) {
                 resp.redirect('/register' + '?message=senhaemuso')
                 return
@@ -71,24 +77,40 @@ module.exports = {
 
     // feed
 
-    pageFeed(req, resp) {
-        return resp.render('page-feed.html')
+    async pageFeed(req, resp) {
+        const db = await publicationsDatabase
+        const publications = await db.all(`SELECT * FROM publications`) // Aqui está pegando o array de resultados que será aplicado o for lá no html
+
+        console.log(publications)
+
+        return resp.render('page-feed.html', { publications })
      }, 
 
-     publish(req, resp) {
+     async publish(req, resp) {
         const fieldPublish = req.body
-        console.log(fieldPublish)
+
+       
         try {
 
+            const db = await publicationsDatabase
+            const date = new Date
 
+
+            await savePublications(db, {
+                text: fieldPublish.text,
+                image: fieldPublish.image,
+                nickName: nickName[0].nickName,
+                date:`${date.getHours()}:${date.getMinutes()} | ${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`,
+                idUser: id[0].id,
+                likes: 0,
+                usersLike: []
+            })
 
             resp.redirect('/feed')
 
-
-
         } catch(e) {
 
-            resp.send('Erro no banco de dados')
+            resp.redirect('/feed' + '?message=error')
             console.log(e)
         }
     }
