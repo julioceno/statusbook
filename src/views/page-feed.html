@@ -43,7 +43,7 @@
 
           <div class="initial-page">
             <img src="/images/page-initial.png" alt=""> 
-            <a href="./page-main.html">Pagina inicial</a>
+            <a href="/feed">Pagina inicial</a>
           </div>
 
           <div class="profile">
@@ -96,7 +96,12 @@
 
           <main class="publications">
 
-            {%for publication in publications%}
+           
+            
+            {% for publication in publications %}
+
+            {%if publication.image == "" %}
+
             <div class="pub">
 
               <div class="post-data">
@@ -115,12 +120,48 @@
               </div>
 
               <div class="like">
-                <input type="submit" name="" value="">
+                <form action="/like-publication" method="POST">
+                  <input type="hidden" name=" _method " value="PUT">
+                  <span hidden>{{publication.id}}</span>
+                  
+                  <input type="submit" name="" value="">
+                </form>
                 <small>2</small>
               </div>
 
             </div>
-            {%endfor%}
+
+            {% else %}
+            
+            <div class="pub-image">
+              <div class="post-data">
+              
+                <img src="/images/image-user-blue.png" alt="">
+
+                <div class="name-date">
+                  <div class="nickName">{{ publication.nickName }}</div>
+                  
+                  <div class="date">{{ publication.date }}</div>
+                </div>
+              </div>
+
+              <div class="status">
+                <p>{{publication.text}}</p>
+              </div>
+
+              <div class="image">
+                <img src="{{publication.image}}" alt="">
+              </div>
+
+              <div class="like">
+                <input type="submit" name="" value="">
+                <small>6</small>
+              </div>
+            </div> 
+
+            {% endif %}
+
+            {% endfor %}
 
             
 <!-- 

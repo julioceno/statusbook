@@ -9,7 +9,7 @@ async function execute(db) {
         date TEXT,
         idUser TEXT,
         likes NUMBER,
-        usersLike TEXT
+        usersLike ARRAY
     );`)
 }
 

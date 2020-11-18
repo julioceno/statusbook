@@ -1,7 +1,8 @@
 const usersDatabase = require('./database/log/usersdb')
 const saveUser = require('./database/log/saveUser')
 const publicationsDatabase = require('./database/post/publicationsdb')
-const savePublications = require('./database/post/savePublications')
+const savePublications = require('./database/post/savePublications');
+const updateLike =  require('./database/post/updateLike')
 
 // dados do usuário
 let nickName;
@@ -79,9 +80,8 @@ module.exports = {
 
     async pageFeed(req, resp) {
         const db = await publicationsDatabase
-        const publications = await db.all(`SELECT * FROM publications`) // Aqui está pegando o array de resultados que será aplicado o for lá no html
-
-        console.log(publications)
+        const results = await db.all(`SELECT * FROM publications`) // Aqui está pegando o array de resultados que será aplicado o for lá no html
+        const publications = results.reverse() 
 
         return resp.render('page-feed.html', { publications })
      }, 
@@ -89,7 +89,6 @@ module.exports = {
      async publish(req, resp) {
         const fieldPublish = req.body
 
-       
         try {
 
             const db = await publicationsDatabase
@@ -100,7 +99,7 @@ module.exports = {
                 text: fieldPublish.text,
                 image: fieldPublish.image,
                 nickName: nickName[0].nickName,
-                date:`${date.getHours()}:${date.getMinutes()} | ${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`,
+                date:`${date.getHours()}:${date.getMinutes()} --- ${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`,
                 idUser: id[0].id,
                 likes: 0,
                 usersLike: []
@@ -113,5 +112,29 @@ module.exports = {
             resp.redirect('/feed' + '?message=error')
             console.log(e)
         }
+    },
+
+    async likePublication(req, resp) {
+            resp.redirect('/feed')
+        
+        
+        // const fieldLike = req.body
+
+        // console.log(fieldLike)
+
+        // try {
+
+        //     const db = await publicationsDatabase 
+
+        //     await uptadeLike(db, )
+
+
+        // } catch(e) {
+        //     console.log(e)
+        //     resp.send('Erro no banco de dados')
+        // }
     }
+
+
+    
 }

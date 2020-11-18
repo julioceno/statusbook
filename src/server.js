@@ -28,5 +28,18 @@ app
     // feed
     .get('/feed', pages.pageFeed)
     .post('/post-publish', pages.publish)
+    .put('/like-publication', ()=> {
+        console.log('put')
+    })
 
     app.listen(8080)
+
+    // app.put('/player/:id', (req, res) => {
+    //     const player = res.send(dataBase.adding({
+    //          id: req.params.id,
+    //          player: req.body.player,
+    //          team: req.body.team
+    //      }))
+     
+    //      return player
+    //  })

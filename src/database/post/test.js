@@ -21,6 +21,24 @@ Database.then(async db => {
     //     ); 
     // `)
 
-    const posts = await db.all('SELECT *  FROM publications  ')
-    console.log(posts)
+    const posts = await db.all(`SELECT *  FROM publications  WHERE id = "1" `)
+    // console.log(posts)
+
+    const array = (posts[0].usersLike).split(',')
+
+
+    let ids 
+   
+    // for(let i = 0 ; i <  array.length ; i++) {
+    //     if (array[i] == 3) ids = array[i]
+    // }
+
+    array.forEach(e => {
+            if (e == 2) {
+                ids = e
+            }        
+    })
+
+    console.log(ids)
+
 })

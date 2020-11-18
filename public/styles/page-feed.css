@@ -203,8 +203,12 @@
 
 .pub .like,
 .pub-image .like  {
-    width: 100%;
+    width: 5rem;
     margin: 2rem 0 1rem 2rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .pub .like input[type="submit"],
